@@ -1,0 +1,15 @@
+
+
+## altinity-clickhouse-operator subchart
+# Ref: https://artifacthub.io/packages/helm/altinity-clickhouse-operator/altinity-clickhouse-operator
+openebs:
+  engines:
+    replicated:
+      mayastor:
+        enabled: false
+    local:
+      zfs: 
+        enabled: false
+      lvm: 
+        enabled: true        
+    

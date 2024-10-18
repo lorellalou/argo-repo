@@ -1,0 +1,11 @@
+apiVersion: v2
+appVersion: v1.0.0
+kubeVersion: ">=1.25.0-0"
+description: A Helm chart to deploy OpenEBS using ArgoCD
+name: openebs
+version: 1.0.0
+dependencies:
+  - name: openebs
+    version: 4.1.1
+    repository: https://openebs.github.io/openebs
+ 
