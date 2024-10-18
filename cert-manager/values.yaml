@@ -1,0 +1,10 @@
+
+
+## cert-manager subchart
+# Ref: https://artifacthub.io/packages/helm/altinity-clickhouse-operator/altinity-clickhouse-operator
+cert-manager:
+  crds:
+    enabled: true
+  prometheus:
+    enabled: false
+    
