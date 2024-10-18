@@ -1,0 +1,10 @@
+apiVersion: v2
+appVersion: v1.0.0
+kubeVersion: ">=1.25.0-0"
+description: A Helm chart to deploy Cert Manager using ArgoCD
+name: sealed-secrets
+version: 1.0.0
+dependencies:
+  - name: sealed-secrets
+    version: 0.27.1
+    repository: https://bitnami-labs.github.io/sealed-secrets
