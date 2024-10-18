@@ -3,8 +3,4 @@
 ## cert-manager subchart
 # Ref: https://artifacthub.io/packages/helm/altinity-clickhouse-operator/altinity-clickhouse-operator
 sealed-secrets:
-  crds:
-    enabled: true
-  prometheus:
-    enabled: false
     
