@@ -3,4 +3,14 @@
 ## cert-manager subchart
 # Ref: https://artifacthub.io/packages/helm/altinity-clickhouse-operator/altinity-clickhouse-operator
 sealed-secrets:
+  serviceAccount:
+    create: true
+  rbac:
+    create: true
+    clusterRole: true
+  resources:
+    limits:
+      cpu: 150m
+      memory: 256Mi
+
     
