@@ -1,0 +1,10 @@
+
+
+## altinity-clickhouse-operator subchart
+# Ref: https://artifacthub.io/packages/helm/altinity-clickhouse-operator/altinity-clickhouse-operator
+altinity-clickhouse-operator:
+  rbac:
+    create: true
+  secret:
+    create: true
+    
