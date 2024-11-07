@@ -7,4 +7,4 @@ version: 1.0.0
 dependencies:
   - name: strimzi-kafka-operator
     version: 0.44.0
-    repository: oci://quay.io/strimzi-helm/strimzi-kafka-operator
+    repository: https://quay.io/repository/strimzi-helm/strimzi-kafka-operator
