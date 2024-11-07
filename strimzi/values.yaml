@@ -1,0 +1,6 @@
+
+
+## strimzi-kafka-operator subchart
+# Ref: https://artifacthub.io/packages/helm/strimzi/strimzi-kafka-operator
+strimzi-kafka-operator:
+  watchAnyNamespace: true

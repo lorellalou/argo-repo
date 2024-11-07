@@ -1,0 +1,10 @@
+apiVersion: v2
+appVersion: v1.0.0
+kubeVersion: ">=1.25.0-0"
+description: A Helm chart to deploy Strimzi Operator using ArgoCD
+name: strimzi
+version: 1.0.0
+dependencies:
+  - name: strimzi-kafka-operator
+    version: 0.44.0
+    repository: oci://quay.io/strimzi-helm/strimzi-kafka-operator
