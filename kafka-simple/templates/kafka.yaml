@@ -23,7 +23,7 @@ spec:
       min.insync.replicas: 2
       inter.broker.protocol.version: "3.8"
     storage:
-      type: openebs-lvm
+      type: jbod
       volumes:
       - id: 0
         type: persistent-claim
