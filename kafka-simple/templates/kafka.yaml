@@ -29,14 +29,14 @@ spec:
         type: persistent-claim
         size: 10Gi
         deleteClaim: true
-        storageClass: openebs-lvm
+        class: openebs-lvm
   zookeeper:
     replicas: 3
     storage:
       type: persistent-claim
       size: 5Gi
       deleteClaim: true
-      storageClass: openebs-lvm
+      class: openebs-lvm
   entityOperator:
     topicOperator: {}
     userOperator: {}
