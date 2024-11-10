@@ -15,6 +15,35 @@ spec:
         port: 9093
         type: internal
         tls: true
+      - name: external
+        port: 9094
+        type: ingress
+        configuration:
+          bootstrap:
+            annotations:
+              external-dns.alpha.kubernetes.io/hostname: kafka-simple-bootstrap.local.
+              external-dns.alpha.kubernetes.io/ttl: "60"
+            host: kafka-simple-bootstrap.local
+          brokers:
+            - broker: 0
+              annotations:
+                external-dns.alpha.kubernetes.io/hostname: kafka-simple-broker-0.local.
+                external-dns.alpha.kubernetes.io/ttl: "60"
+              host: kafka-simple-broker-0.local
+            - broker: 1
+              annotations:
+                external-dns.alpha.kubernetes.io/hostname: kafka-simple-broker-1.local.
+                external-dns.alpha.kubernetes.io/ttl: "60"
+              host: kafka-simple-broker-1.local
+            - broker: 2
+              annotations:
+                external-dns.alpha.kubernetes.io/hostname: kafka-simple-broker-2.local.
+                external-dns.alpha.kubernetes.io/ttl: "60"
+              host: kafka-simple-broker-2.local
+          brokerCertChainAndKey:
+            secretName: my-cluster-certificate
+            certificate: tls.crt
+            key: tls.key                
     config:
       offsets.topic.replication.factor: 3
       transaction.state.log.replication.factor: 3

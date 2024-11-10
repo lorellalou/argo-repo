@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: my-cluster-certificate
+spec:
+  secretName: my-cluster-certificate
+  issuerRef:
+    name: mkcert-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
+  subject:
+    organizations:
+      - my-org
+  dnsNames:
+    - kafka-simple-bootstrap.local
+    - kafka-simple-broker-0.local
+    - kafka-simple-broker-1.local
+    - kafka-simple-broker-2.local
