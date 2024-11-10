@@ -17,7 +17,7 @@ spec:
         tls: true
       - name: external
         port: 9094
-        type: ingress
+        type: nodeport
         tls: true
         configuration:
           bootstrap:
