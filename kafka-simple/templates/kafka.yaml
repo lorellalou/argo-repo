@@ -18,6 +18,7 @@ spec:
       - name: external
         port: 9094
         type: ingress
+        tls: true
         configuration:
           bootstrap:
             annotations:
