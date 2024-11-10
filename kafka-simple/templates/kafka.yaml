@@ -24,11 +24,14 @@ spec:
             nodePort: 32100
           brokers:
           - broker: 0
-            nodePort: 32000
+            advertisedHost: kafka-simple-broker-0.local
+            advertisedPort: 32000
           - broker: 1
-            nodePort: 32001
+            advertisedHost: kafka-simple-broker-1.local
+            advertisedPort: 32001
           - broker: 2
-            nodePort: 32002
+            advertisedHost: kafka-simple-broker-2.local
+            advertisedPort: 32002
           brokerCertChainAndKey:
             secretName: my-cluster-certificate
             certificate: tls.crt
