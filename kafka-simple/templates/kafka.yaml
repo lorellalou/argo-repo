@@ -21,26 +21,14 @@ spec:
         tls: true
         configuration:
           bootstrap:
-            annotations:
-              external-dns.alpha.kubernetes.io/hostname: kafka-simple-bootstrap.local.
-              external-dns.alpha.kubernetes.io/ttl: "60"
-            host: kafka-simple-bootstrap.local
+            nodePort: 32100
           brokers:
-            - broker: 0
-              annotations:
-                external-dns.alpha.kubernetes.io/hostname: kafka-simple-broker-0.local.
-                external-dns.alpha.kubernetes.io/ttl: "60"
-              host: kafka-simple-broker-0.local
-            - broker: 1
-              annotations:
-                external-dns.alpha.kubernetes.io/hostname: kafka-simple-broker-1.local.
-                external-dns.alpha.kubernetes.io/ttl: "60"
-              host: kafka-simple-broker-1.local
-            - broker: 2
-              annotations:
-                external-dns.alpha.kubernetes.io/hostname: kafka-simple-broker-2.local.
-                external-dns.alpha.kubernetes.io/ttl: "60"
-              host: kafka-simple-broker-2.local
+          - broker: 0
+            nodePort: 32000
+          - broker: 1
+            nodePort: 32001
+          - broker: 2
+            nodePort: 32002
           brokerCertChainAndKey:
             secretName: my-cluster-certificate
             certificate: tls.crt
