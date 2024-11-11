@@ -61,3 +61,11 @@ spec:
   entityOperator:
     topicOperator: {}
     userOperator: {}
+  cruiseControl:
+    brokerCapacity:
+      inboundNetwork: 10000KB/s
+      outboundNetwork: 10000KB/s
+    config:
+      hard.goals: >
+        com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal,
+        com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal
