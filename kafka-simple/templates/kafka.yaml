@@ -69,15 +69,4 @@ spec:
       hard.goals: >
         com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal,
         com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal
-  kafkaExporter: 
-    template:
-        pod:
-          affinity:
-            nodeAffinity:
-              requiredDuringSchedulingIgnoredDuringExecution:
-                nodeSelectorTerms:
-                - matchExpressions:
-                  - key: agentpool
-                    operator: In
-                    values:
-                    - kafkaexport
+  kafkaExporter: {}
