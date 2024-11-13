@@ -43,6 +43,12 @@ spec:
       default.replication.factor: 3
       min.insync.replicas: 2
       inter.broker.protocol.version: "3.8"
+    metricsConfig:
+      type: jmxPrometheusExporter
+      valueFrom:
+        configMapKeyRef:
+          name: kafka-metrics
+          key: kafka-metrics-config.yml
     storage:
       type: jbod
       volumes:
@@ -69,4 +75,10 @@ spec:
       hard.goals: >
         com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal,
         com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal
+    metricsConfig:
+      type: jmxPrometheusExporter
+      valueFrom:
+        configMapKeyRef:
+          name: cruise-control-metrics
+          key: metrics-config.yml        
   kafkaExporter: {}
