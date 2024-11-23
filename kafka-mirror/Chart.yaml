@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: v1.0.0
+kubeVersion: ">=1.25.0-0"
+description: A Helm chart to deploy Kafka MirrorMaker using ArgoCD
+name: kafka-mirror
+version: 1.0.0
