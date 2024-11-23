@@ -13,6 +13,34 @@ spec:
   mirrors:
   - sourceCluster: "my-cluster-source"
     targetCluster: "my-cluster-target"
-    sourceConnector: {}
     topicsPattern: "^mm.*"
     groupsPattern: "^group.*"
+    sourceConnector:
+      tasksMax: 10
+      config:
+        replication.factor: 3
+        offset-syncs.topic.replication.factor: 3
+        sync.topic.acls.enabled: "false"
+        refresh.topics.enabled: "true"
+        refresh.topics.interval.seconds: 5
+        sync.group.offsets.enabled: "true"
+        emit.checkpoints.enabled: "true"
+        replication.policy.separator: "."
+        replication.policy.class: "org.apache.kafka.connect.mirror.IdentityReplicationPolicy"
+    heartbeatConnector:
+      config:
+        heartbeats.topic.replication.factor: 3
+        replication.policy.class: "org.apache.kafka.connect.mirror.IdentityReplicationPolicy"
+        replication.policy.separator: "."
+    checkpointConnector:
+      config:
+        checkpoints.topic.replication.factor: 3
+        refresh.groups.enabled: "true"
+        refresh.groups.interval.seconds: 5
+        sync.topics.configs.enabled: "true"
+        sync.group.offsets.enabled: "true"
+        sync.group.offsets.interval.seconds: 5
+        emit.checkpoints.enabled: "true"
+        emit.checkpoints.interval.seconds: 5
+        replication.policy.separator: "."
+        replication.policy.class: "org.apache.kafka.connect.mirror.IdentityReplicationPolicy"
