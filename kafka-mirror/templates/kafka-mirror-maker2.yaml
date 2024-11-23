@@ -23,6 +23,7 @@ spec:
         sync.topic.acls.enabled: "false"
         refresh.topics.enabled: "true"
         refresh.topics.interval.seconds: 5
+        offset.lag.max: 0
         sync.group.offsets.enabled: "true"
         emit.checkpoints.enabled: "true"
         replication.policy.separator: "."
