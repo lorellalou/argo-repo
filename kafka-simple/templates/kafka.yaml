@@ -1,9 +1,28 @@
 apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaNodePool
+metadata:
+  name: controller
+  labels:
+    strimzi.io/cluster: my-cluster
+spec:
+  replicas: 3
+  roles:
+    - controller
+  storage:
+    type: jbod
+    volumes:
+      - id: 0
+        type: persistent-claim
+        size: 5Gi
+        deleteClaim: true
+        class: openebs-lvm        
+---
+apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: my-cluster
   annotations:
-    strimzi.io/kraft: disabled # states that the cluster is ZooKeeper-based
+    strimzi.io/kraft: migration # states that the cluster is ZooKeeper-based
     strimzi.io/node-pools: enabled  
 spec:
   kafka:
