@@ -41,8 +41,8 @@ kind: Kafka
 metadata:
   name: my-cluster
   annotations:
-    strimzi.io/kraft: migration # states that the cluster is ZooKeeper-based
-    strimzi.io/node-pools: enabled  
+    strimzi.io/kraft: enabled
+    strimzi.io/node-pools: enabled
 spec:
   kafka:
     version: 3.8.0
