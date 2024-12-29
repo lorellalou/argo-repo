@@ -44,6 +44,11 @@ pulsar:
   proxy:
     replicaCount: 1
 
+  pulsar_manager:
+    volumes:
+      data:
+        size: 512Mi
+        storageClassName: openebs-lvm
 
   ## disable monitoring stack
   kube-prometheus-stack:
