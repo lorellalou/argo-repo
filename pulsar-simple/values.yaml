@@ -1,43 +1,45 @@
 
-volumes:
-  persistence: true
+pulsar:
 
-# disabled AntiAffinity
-affinity:
-  anti_affinity: false
-
-# disable auto recovery
-components:
-  autorecovery: false
-  pulsar_manager: true
-
-zookeeper:
-  replicaCount: 1
   volumes:
-    data:
-      size: 5Gi
-      storageClassName: openebs-lvm
+    persistence: true
 
-bookkeeper:
-  replicaCount: 3
-  volumes:
-    common:
-      size: 10Gi
-      storageClassName: openebs-lvm
-  configData:
-    # minimal memory use for bookkeeper
-    # https://bookkeeper.apache.org/docs/reference/config#db-ledger-storage-settings
-    dbStorage_writeCacheMaxSizeMb: "32"
-    dbStorage_readAheadCacheMaxSizeMb: "32"
-    dbStorage_rocksDB_writeBufferSizeMB: "8"
-    dbStorage_rocksDB_blockCacheSize: "8388608"
+  # disabled AntiAffinity
+  affinity:
+    anti_affinity: false
 
-broker:
-  replicaCount: 3
-  configData:
-    ## Enable `autoSkipNonRecoverableData` since bookkeeper is running
-    ## without persistence
-    autoSkipNonRecoverableData: "true"
+  # disable auto recovery
+  components:
+    autorecovery: false
+    pulsar_manager: true
 
-proxy:
-  replicaCount: 1
+  zookeeper:
+    replicaCount: 1
+    volumes:
+      data:
+        size: 5Gi
+        storageClassName: openebs-lvm
+
+  bookkeeper:
+    replicaCount: 3
+    volumes:
+      common:
+        size: 10Gi
+        storageClassName: openebs-lvm
+    configData:
+      # minimal memory use for bookkeeper
+      # https://bookkeeper.apache.org/docs/reference/config#db-ledger-storage-settings
+      dbStorage_writeCacheMaxSizeMb: "32"
+      dbStorage_readAheadCacheMaxSizeMb: "32"
+      dbStorage_rocksDB_writeBufferSizeMB: "8"
+      dbStorage_rocksDB_blockCacheSize: "8388608"
+
+  broker:
+    replicaCount: 3
+    configData:
+      ## Enable `autoSkipNonRecoverableData` since bookkeeper is running
+      ## without persistence
+      autoSkipNonRecoverableData: "true"
+
+  proxy:
+    replicaCount: 1

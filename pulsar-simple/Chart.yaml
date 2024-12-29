@@ -1,6 +1,10 @@
 apiVersion: v2
 appVersion: v1.0.0
 kubeVersion: ">=1.25.0-0"
-description: A Helm chart to deploy Simple Kafka using ArgoCD
-name: kafka-simple
+description: A Helm chart to deploy Simple Pulsar using ArgoCD
+name: pulsar-simple
 version: 1.0.0
+dependencies:
+  - name: pulsar
+    version: 4.0.1
+    repository: https://pulsar.apache.org/charts
