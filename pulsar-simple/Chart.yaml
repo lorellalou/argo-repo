@@ -6,5 +6,5 @@ name: pulsar-simple
 version: 1.0.0
 dependencies:
   - name: pulsar
-    version: 4.0.1
+    version: 3.8.0
     repository: https://pulsar.apache.org/charts
