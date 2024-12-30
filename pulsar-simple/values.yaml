@@ -12,7 +12,7 @@ pulsar:
   components:
     autorecovery: false
     pulsar_manager: true
-    proxy: false
+    proxy: true
 
   zookeeper:
     replicaCount: 1
