@@ -51,14 +51,14 @@ pulsar:
         size: 512Mi
         storageClassName: openebs-lvm
 
-  ## enable monitoring stack
+  ## disable monitoring stack
   kube-prometheus-stack:
-    enabled: true
+    enabled: false
     prometheusOperator:
       enabled: false
     grafana:
-      enabled: true
+      enabled: false
     alertmanager:
       enabled: false
     prometheus:
-      enabled: true    
+      enabled: false    
