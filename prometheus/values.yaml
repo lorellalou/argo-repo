@@ -3,13 +3,4 @@ kube-prometheus-stack:
     ingress:
       enabled: true
        hosts:
-         - grafana3.local  
-    persistence:
-      enabled: true
-      type: sts
-      storageClassName: "openebs-lvm"
-      accessModes:
-        - ReadWriteOnce
-      size: 5Gi
-      finalizers:
-        - kubernetes.io/pvc-protection 
+         - grafana3.local
