@@ -3,7 +3,7 @@ kube-prometheus-stack:
     ingress:
       enabled: true
       hosts:
-        - grafana3.local  
+        - grafana-3.local  
     persistence:
       enabled: true
       type: sts
