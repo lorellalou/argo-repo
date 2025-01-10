@@ -19,7 +19,7 @@ apiVersion: crdb.cockroachlabs.com/v1alpha1
 kind: CrdbCluster
 metadata:
   # this translates to the name of the statefulset that is created
-  name: cockroachdb
+  name: cockroachdb-simple
 spec:
   dataStore:
     pvc:
