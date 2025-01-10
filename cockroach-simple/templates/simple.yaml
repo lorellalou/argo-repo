@@ -34,7 +34,7 @@ spec:
   resources:
     requests:
       # This is intentionally low to make it work on local k3d clusters.
-      cpu: 500m
+      cpu: 250m
       memory: 1Gi
     limits:
       cpu: 2
