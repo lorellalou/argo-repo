@@ -12,4 +12,14 @@ kube-prometheus-stack:
         - ReadWriteOnce
       size: 5Gi
       finalizers:
-        - kubernetes.io/pvc-protection 
+        - kubernetes.io/pvc-protection
+  prometheus:
+    prometheusSpec:
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: "openebs-lvm"
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 25Gi
