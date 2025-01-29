@@ -9,3 +9,6 @@ istiod:
       cpu: 50m
       memory: 512Mi  
     
+kiali-server:
+  auth:
+    strategy: anonymous 
