@@ -7,7 +7,14 @@ istiod:
   resources:
     requests:
       cpu: 50m
-      memory: 512Mi  
+      memory: 512Mi
+  global:
+    proxy:
+      autoInject: enabled
+      resources:
+        limits:
+          cpu: 50mi
+          memory: 256Mi    
     
 kiali-server:
   auth:
