@@ -4,5 +4,8 @@
 # Ref: https://artifacthub.io/packages/helm/altinity-clickhouse-operator/altinity-clickhouse-operator
 istiod:
   revision: 1-24-2
-      
+  resources:
+    requests:
+      cpu: 50m
+      memory: 512Mi  
     
