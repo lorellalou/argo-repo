@@ -5,7 +5,7 @@ description: A Helm chart to deploy Istio using ArgoCD
 name: istio
 version: 1.0.0
 dependencies:
-  - name: istio-base
+  - name: base
     version: 1.24.2
     repository: https://istio-release.storage.googleapis.com/charts
   - name: istiod
